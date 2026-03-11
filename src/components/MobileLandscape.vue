@@ -1,3 +1,26 @@
+<script setup lang="ts">
+import { onMounted, onUnmounted, ref } from 'vue'
+
+const isPortrait = ref(false)
+
+function checkOrientation() {
+  // Only show on mobile devices
+  const isMobile = window.innerWidth <= 1024
+  isPortrait.value = isMobile && window.innerHeight > window.innerWidth
+}
+
+onMounted(() => {
+  checkOrientation()
+  window.addEventListener('resize', checkOrientation)
+  window.addEventListener('orientationchange', checkOrientation)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', checkOrientation)
+  window.removeEventListener('orientationchange', checkOrientation)
+})
+</script>
+
 <template>
   <Transition name="fade">
     <div
@@ -24,36 +47,13 @@
 
       <!-- Decorative dots -->
       <div class="flex gap-2 mt-4">
-        <div class="w-1.5 h-1.5 rounded-full bg-cyan-400" ></div>
-        <div class="w-1.5 h-1.5 rounded-full bg-cyan-700" ></div>
-        <div class="w-1.5 h-1.5 rounded-full bg-cyan-700" ></div>
+        <div class="w-1.5 h-1.5 rounded-full bg-cyan-400"></div>
+        <div class="w-1.5 h-1.5 rounded-full bg-cyan-700"></div>
+        <div class="w-1.5 h-1.5 rounded-full bg-cyan-700"></div>
       </div>
     </div>
   </Transition>
 </template>
-
-<script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
-
-const isPortrait = ref(false)
-
-function checkOrientation() {
-  // Only show on mobile devices
-  const isMobile = window.innerWidth <= 1024
-  isPortrait.value = isMobile && window.innerHeight > window.innerWidth
-}
-
-onMounted(() => {
-  checkOrientation()
-  window.addEventListener('resize', checkOrientation)
-  window.addEventListener('orientationchange', checkOrientation)
-})
-
-onUnmounted(() => {
-  window.removeEventListener('resize', checkOrientation)
-  window.removeEventListener('orientationchange', checkOrientation)
-})
-</script>
 
 <style scoped>
 .fade-enter-active,

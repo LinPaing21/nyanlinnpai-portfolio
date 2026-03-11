@@ -30,13 +30,13 @@ const waypoints = [
   { position: [4, 3, 10], lookAt: [8, 2, 5] },
 
   // Contact — deep into stage
-  { position: [-2, 3, 4.5], lookAt: [-8, 2,4.2] },
+  { position: [-2, 3, 4.5], lookAt: [-8, 2, 4.2] },
 ]
 
 export function useScrollCamera() {
   const { camera } = useTres()
 
-  const isMobile = window.innerWidth <= 1024;
+  const isMobile = window.innerWidth <= 1024
 
   onMounted(() => {
     ScrollTrigger.create({

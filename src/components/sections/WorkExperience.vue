@@ -61,7 +61,6 @@ onMounted(() => {
     cast-shadow
   />
 
-
   <!-- <TresSpotLightHelper v-if="sLight" :args="[sLight]" /> -->
 
   <!-- Fake beam Center -->
