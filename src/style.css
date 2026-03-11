@@ -1,0 +1,26 @@
+@import 'tailwindcss';
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+#app {
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+}
+
+/* Ensure scroll container captures touch on mobile */
+#scroll-container {
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent canvas from stealing touch events */
+canvas {
+  touch-action: none;
+  pointer-events: none;
+}
