@@ -42,7 +42,7 @@ const projects = [
     name: 'Kawaii JLPT Master',
     type: 'Personal · Web App',
     desc: 'TALL Stack JLPT exam practice app with MongoDB, AWS Lambda web scraper for automated data ingestion.',
-    live: 'https://kawaii-jlpt.laravel.cloud/',
+    live: 'https://kawaii-jlpt.com/',
   },
   {
     name: 'Padesar KBZPay',
